@@ -1,7 +1,12 @@
 using CryptoWatch;
+using CryptoWatch.Worker;
 
-IHost host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services => { services.AddHostedService<Worker>(); })
+var host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices(
+        services =>
+        {
+            services.AddHostedService<InfoWorker>();
+        })
     .Build();
 
 host.Run();

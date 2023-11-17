@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AOZ00xOzYIH7kns4UG82qJ4L5esfJP0j6rsTEEiCaaLuI94W0kd9jOM8Jvv03P7Dty0S/OgpF6UrUMNfCz+dGA==",
+  "dgSpecHash": "3RE6ikA6Zor+7GxNrgsPe8nrS0P8K1K6c6aarOKAQPZy9xFqCi2GCFCdypHdqcKG9my4Frm7iTeT9mshvJsbig==",
   "success": true,
   "projectFilePath": "/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/CryptoWatch.csproj",
   "expectedPackageFiles": [
+    "/Users/abrandaol/.nuget/packages/binance.spot/4.0.1/binance.spot.4.0.1.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.configuration/7.0.0/microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.configuration.binder/7.0.3/microsoft.extensions.configuration.binder.7.0.3.nupkg.sha512",
@@ -29,6 +30,7 @@
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.options/7.0.1/microsoft.extensions.options.7.0.1.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.options.configurationextensions/7.0.0/microsoft.extensions.options.configurationextensions.7.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "/Users/abrandaol/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/system.diagnostics.diagnosticsource/7.0.1/system.diagnostics.diagnosticsource.7.0.1.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/system.diagnostics.eventlog/7.0.0/system.diagnostics.eventlog.7.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",

@@ -44,3 +44,6 @@
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/obj/Debug/net7.0/CryptoWatch.pdb
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/obj/Debug/net7.0/CryptoWatch.genruntimeconfig.cache
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/obj/Debug/net7.0/ref/CryptoWatch.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net7.0/Common.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net7.0/Spot.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net7.0/Newtonsoft.Json.dll
