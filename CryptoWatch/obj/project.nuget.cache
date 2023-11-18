@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6+koeA3eWtBlD+hPHVeefP+u5k7EMMVNl0MppkQPjUBmoQKKanjHT+w8j0Jk8RYErD9XH0ah3YiVhMpO+UK2Ig==",
+  "dgSpecHash": "9ywlQIIRlg6aimO7W9FAVQ2Ym1XMPAfwMY2b6gUfREMRLFSNf1E+SRlj5t/C3CI5ltk2XTZesHGuWxjTIcYLRw==",
   "success": true,
   "projectFilePath": "/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/CryptoWatch.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/abrandaol/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/binance.spot/4.0.1/binance.spot.4.0.1.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/abrandaol/.nuget/packages/microsoft.aspnetcore.diagnostics.entityframeworkcore/8.0.0/microsoft.aspnetcore.diagnostics.entityframeworkcore.8.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.3/microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.codeanalysis.common/4.5.0/microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

@@ -9,6 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="Binance.Spot" Version="4.0.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="8.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="8.0.0" />
@@ -25,9 +26,5 @@
         </PackageReference>
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
         <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Services\" />
     </ItemGroup>
 </Project>
