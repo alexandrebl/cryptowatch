@@ -2,8 +2,6 @@ using CryptoWatch.Integration.Binance.ApiRest.Domain;
 using CryptoWatch.Integration.Binance.ApiRest.Interfaces;
 using CryptoWatch.Repository.Interfaces;
 using CryptoWatch.Services.Interfaces;
-using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.VisualBasic;
 using StackExchange.Redis;
 
 namespace CryptoWatch.Services;
@@ -12,13 +10,14 @@ public class TickerPriceServices : ITickerPriceServices
 {
     private readonly ISymbolRepository _symbolRepository;
     private readonly ITickerPriceIntegration _tickerPriceIntegration;
-    private readonly IConnectionMultiplexer _connectionMultiplexer;
+    private readonly IDatabase _redisDatabaseLastPrices;
 
-    public TickerPriceServices(ISymbolRepository symbolRepository, ITickerPriceIntegration tickerPriceIntegration, IConnectionMultiplexer connectionMultiplexer)
+    public TickerPriceServices(ISymbolRepository symbolRepository, ITickerPriceIntegration tickerPriceIntegration,
+        [FromKeyedServices("LastPrices")] IDatabase redisDatabaseLastPrices)
     {
         _symbolRepository = symbolRepository;
         _tickerPriceIntegration = tickerPriceIntegration;
-        _connectionMultiplexer = connectionMultiplexer;
+        _redisDatabaseLastPrices = redisDatabaseLastPrices;
     }
 
     public async Task UpdateTickerPrice()
@@ -51,7 +50,6 @@ public class TickerPriceServices : ITickerPriceServices
         var hashEntries = tickerPrices.Select(s =>
             new HashEntry(s.Symbol, s.LastPrice)).ToArray();
 
-        var database = _connectionMultiplexer.GetDatabase(0);
-        await database.HashSetAsync("LastPrices", hashEntries);
+        await _redisDatabaseLastPrices.HashSetAsync("LastPrices", hashEntries);
     }
 }

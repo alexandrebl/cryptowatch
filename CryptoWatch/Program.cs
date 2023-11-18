@@ -21,7 +21,7 @@ var host = Host.CreateDefaultBuilder(args)
             
             services.AddSingleton<IConnectionMultiplexer>(redisConnection);
             // todo O indice do banco deveria vir por configuração
-            services.AddSingleton(redisConnection.GetDatabase(0));
+            services.AddKeyedSingleton("LastPrices", redisConnection.GetDatabase(0));
 
             #endregion
 
@@ -39,7 +39,7 @@ var host = Host.CreateDefaultBuilder(args)
             #endregion
             
             #region Workers
-            //services.AddHostedService<InfoWorker>();
+            services.AddHostedService<ThresholdWorker>();
             services.AddHostedService<TickerWorker>();
             #endregion
         })
