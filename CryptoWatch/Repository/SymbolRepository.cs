@@ -16,7 +16,6 @@ public class SymbolRepository : ISymbolRepository
     {
         var symbolWatchItems =  _cryptoWatchSpotContext.SymbolWatches.AsEnumerable();
 
-        await Task.Delay(1);
         return symbolWatchItems;
     }
 }

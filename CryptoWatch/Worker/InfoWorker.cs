@@ -7,8 +7,7 @@ public class InfoWorker : BackgroundService
 {
     private readonly ILogger<InfoWorker> _logger;
     private readonly Market _market;
-
-
+    
     public InfoWorker(ILogger<InfoWorker> logger)
     {
         _logger = logger;

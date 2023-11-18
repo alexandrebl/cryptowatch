@@ -30,7 +30,7 @@ var host = Host.CreateDefaultBuilder(args)
             
             #region Workers
             services.AddHostedService<InfoWorker>();
-            services.AddHostedService<TickerWorker>();
+            //services.AddHostedService<TickerWorker>();
             #endregion
         })
     .Build();
