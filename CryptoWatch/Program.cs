@@ -18,14 +18,14 @@ var host = Host.CreateDefaultBuilder(args)
             
             #region Entity Framework
             services.AddDbContext<CryptoWatchSpotContext>(options =>
-                options.UseSqlServer(Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCONNECTION")));
+                options.UseSqlServer(Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCONNECTION")), ServiceLifetime.Singleton);
 
             #endregion
 
             #region Dependecy Injection
-            services.AddScoped<ITickerPriceIntegration, TickerPriceIntegration>();
-            services.AddScoped<ISymbolRepository, SymbolRepository>();
-            services.AddScoped<ISymbolWatchServices, SymbolWatchServices>();
+            services.AddSingleton<ITickerPriceIntegration, TickerPriceIntegration>();
+            services.AddSingleton<ISymbolRepository, SymbolRepository>();
+            services.AddSingleton<ISymbolWatchServices, SymbolWatchServices>();
             #endregion
             
             #region Workers

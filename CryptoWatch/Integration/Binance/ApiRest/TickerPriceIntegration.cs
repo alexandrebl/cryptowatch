@@ -32,7 +32,7 @@ public class TickerPriceIntegration : ITickerPriceIntegration
     {
         var contentStream = await OnGet(symbol);
 
-        if (contentStream == Stream.Null)
+        if (contentStream == string.Empty)
             throw new Exception($"Was not possible to got ticker price for symbol: {symbol}");
 
         var tickerPrice = MapperFromStream(contentStream, symbol);
@@ -40,7 +40,7 @@ public class TickerPriceIntegration : ITickerPriceIntegration
         return tickerPrice;
     }
 
-    private TickerPrice MapperFromStream(Stream contentStream, string symbol)
+    private TickerPrice MapperFromStream(string contentStream, string symbol)
     {
         var tickerPrice = JsonSerializer.Deserialize<TickerPrice?>(contentStream, _serializeOptions);
 
@@ -50,7 +50,7 @@ public class TickerPriceIntegration : ITickerPriceIntegration
         return tickerPrice;
     }
 
-    private async Task<Stream> OnGet(string symbol)
+    private async Task<string> OnGet(string symbol)
     {
         var httpRequestMessage = new HttpRequestMessage(
             HttpMethod.Get,
@@ -59,10 +59,10 @@ public class TickerPriceIntegration : ITickerPriceIntegration
         var httpClient = _httpClientFactory.CreateClient();
         var httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
 
-        if (!httpResponseMessage.IsSuccessStatusCode) return Stream.Null;
-
-        await using var contentStream =
-            await httpResponseMessage.Content.ReadAsStreamAsync();
+        if (!httpResponseMessage.IsSuccessStatusCode) return string.Empty;
+        
+        var contentStream =
+            await httpResponseMessage.Content.ReadAsStringAsync();
 
         return contentStream;
     }

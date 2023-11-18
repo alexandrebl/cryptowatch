@@ -20,13 +20,22 @@ public class SymbolWatchServices : ISymbolWatchServices
     {
         var symbolWatchItems = await _symbolRepository.GetSymbolsToWatchASync();
 
+        if (!symbolWatchItems.Any())
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("There is no symbol to watch");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
         var symbols = symbolWatchItems.Select(s => s.Symbol);
         
         var tickerPrices = _tickerPriceIntegration.GetPrices(symbols);
         
         foreach (var tickerPrice in tickerPrices)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"{DateTime.UtcNow:o} => Symbol: {tickerPrice.Symbol}, Price: {tickerPrice.LastPrice}, Volume: {tickerPrice.Volume}");
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }

@@ -5,7 +5,7 @@
       "dotnetRunMessages": true,
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development",
-        "CRYPTOWATCHSPOTCONNECTION": "Server=tcp:cryptowatchspot.database.windows.net,1433;Initial Catalog=CryptoWatchSpot;Persist Security Info=False;User ID=cryptowatchspot;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+        "CRYPTOWATCHSPOTCONNECTION": "Server=tcp:cryptowatchspot.database.windows.net,1433;Initial Catalog=CryptoWatchSpot;Persist Security Info=False;User ID=cryptowatchspot;Password=Crypto@2023;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
       }
     }
   }
