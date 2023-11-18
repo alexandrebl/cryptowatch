@@ -1,5 +1,6 @@
 using CryptoWatch.Integration.Binance.ApiRest.Interfaces;
 using CryptoWatch.Services.Interfaces;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace CryptoWatch.Worker;
 

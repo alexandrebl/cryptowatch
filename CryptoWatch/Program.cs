@@ -7,6 +7,7 @@ using CryptoWatch.Repository.Interfaces;
 using CryptoWatch.Services;
 using CryptoWatch.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 
 var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(
@@ -14,7 +15,15 @@ var host = Host.CreateDefaultBuilder(args)
         {
             #region Middlewares
             services.AddHttpClient();
+            
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCACHECONNECTION");
+            });
+            
+            services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("CRYPTOWATCHSPOTCACHECONNECTION"));
             #endregion
+
             
             #region Entity Framework
             services.AddDbContext<CryptoWatchSpotContext>(options =>
@@ -29,8 +38,8 @@ var host = Host.CreateDefaultBuilder(args)
             #endregion
             
             #region Workers
-            services.AddHostedService<InfoWorker>();
-            //services.AddHostedService<TickerWorker>();
+            //services.AddHostedService<InfoWorker>();
+            services.AddHostedService<TickerWorker>();
             #endregion
         })
     .Build();
