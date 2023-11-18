@@ -1,8 +1,10 @@
+using CryptoWatch.Integration.Binance.ApiRest.Domain;
 using CryptoWatch.Integration.Binance.ApiRest.Interfaces;
 using CryptoWatch.Repository.Interfaces;
 using CryptoWatch.Services.Interfaces;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.VisualBasic;
+using StackExchange.Redis;
 
 namespace CryptoWatch.Services;
 
@@ -10,14 +12,13 @@ public class TickerPriceServices : ITickerPriceServices
 {
     private readonly ISymbolRepository _symbolRepository;
     private readonly ITickerPriceIntegration _tickerPriceIntegration;
-    private readonly IDistributedCache _distributedCache;
+    private readonly IConnectionMultiplexer _connectionMultiplexer;
 
-    public TickerPriceServices(ISymbolRepository symbolRepository, 
-        ITickerPriceIntegration tickerPriceIntegration, IDistributedCache distributedCache)
+    public TickerPriceServices(ISymbolRepository symbolRepository, ITickerPriceIntegration tickerPriceIntegration, IConnectionMultiplexer connectionMultiplexer)
     {
         _symbolRepository = symbolRepository;
         _tickerPriceIntegration = tickerPriceIntegration;
-        _distributedCache = distributedCache;
+        _connectionMultiplexer = connectionMultiplexer;
     }
 
     public async Task UpdateTickerPrice()
@@ -35,28 +36,22 @@ public class TickerPriceServices : ITickerPriceServices
         
         var tickerPrices = _tickerPriceIntegration.GetPrices(symbols);
         
+        await SetPriceOnCache(tickerPrices);
+
         foreach (var tickerPrice in tickerPrices)
         {
-            await SetPriceOnCache(tickerPrice.Symbol, tickerPrice.LastPrice);
-            
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"{DateTime.UtcNow:o} => Symbol: {tickerPrice.Symbol}, Price: {tickerPrice.LastPrice}, Volume: {tickerPrice.Volume}");
             Console.ForegroundColor = ConsoleColor.White;
         }
     }
-
-    /// <summary>
-    /// Grava último preço no cache
-    /// </summary>
-    /// <param name="symbol">Moeda</param>
-    /// <param name="lastPrice">Último preço</param>
-    /// <param name="expiration">Tempo para expirar. Cada loop 5 sec => 2x Loop + Metade do Loop</param>
-    private async Task SetPriceOnCache(string symbol, string lastPrice, double expiration = 12)
+    
+    private async Task SetPriceOnCache(IEnumerable<TickerPrice> tickerPrices)
     {
-        await _distributedCache.SetStringAsync(symbol, lastPrice, new DistributedCacheEntryOptions()
-        {
-            AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(expiration)
-        });
-        
+        var hashEntries = tickerPrices.Select(s =>
+            new HashEntry(s.Symbol, s.LastPrice)).ToArray();
+
+        var database = _connectionMultiplexer.GetDatabase(0);
+        await database.HashSetAsync("LastPrices", hashEntries);
     }
 }

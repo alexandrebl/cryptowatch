@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ufr0nbQm6IbcMIlJNOv31b0cfffpnDsyOTXy3p1aXytwICJJSqIED2DfVPlRICnxU5YsA9a9nEAiQXp+/0LHxQ==",
+  "dgSpecHash": "EO38vGoSr77Ifky940fc1IsTJGEQoKXtzsGCjYWlGHeURQ5XheA4vkq8pE7zk6UH91yrEC+ATN+qt5viAxeg3Q==",
   "success": true,
   "projectFilePath": "/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/CryptoWatch.csproj",
   "expectedPackageFiles": [
@@ -28,7 +28,6 @@
     "/Users/abrandaol/.nuget/packages/microsoft.entityframeworkcore.tools/8.0.0/microsoft.entityframeworkcore.tools.8.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.caching.memory/8.0.0/microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
-    "/Users/abrandaol/.nuget/packages/microsoft.extensions.caching.stackexchangeredis/8.0.0/microsoft.extensions.caching.stackexchangeredis.8.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/microsoft.extensions.configuration.binder/8.0.0/microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",
@@ -73,7 +72,9 @@
     "/Users/abrandaol/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
-    "/Users/abrandaol/.nuget/packages/stackexchange.redis/2.6.122/stackexchange.redis.2.6.122.nupkg.sha512",
+    "/Users/abrandaol/.nuget/packages/stackexchange.redis/2.7.4/stackexchange.redis.2.7.4.nupkg.sha512",
+    "/Users/abrandaol/.nuget/packages/stackexchange.redis.extensions.aspnetcore/9.1.0/stackexchange.redis.extensions.aspnetcore.9.1.0.nupkg.sha512",
+    "/Users/abrandaol/.nuget/packages/stackexchange.redis.extensions.core/9.1.0/stackexchange.redis.extensions.core.9.1.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/abrandaol/.nuget/packages/system.composition/6.0.0/system.composition.6.0.0.nupkg.sha512",

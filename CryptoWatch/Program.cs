@@ -15,13 +15,14 @@ var host = Host.CreateDefaultBuilder(args)
         {
             #region Middlewares
             services.AddHttpClient();
+
+            var redisConnection = ConnectionMultiplexer.Connect( 
+                Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCACHECONNECTION"));
             
-            services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCACHECONNECTION");
-            });
-            
-            services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("CRYPTOWATCHSPOTCACHECONNECTION"));
+            services.AddSingleton<IConnectionMultiplexer>(redisConnection);
+            // todo O indice do banco deveria vir por configuração
+            services.AddSingleton(redisConnection.GetDatabase(0));
+
             #endregion
 
             
