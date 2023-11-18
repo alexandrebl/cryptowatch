@@ -1,6 +1,6 @@
 namespace CryptoWatch.Services.Interfaces;
 
-public interface ISymbolWatchServices
+public interface ITickerPriceServices
 {
     public Task UpdateTickerPrice();
 }

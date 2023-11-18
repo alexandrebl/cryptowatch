@@ -25,7 +25,7 @@ var host = Host.CreateDefaultBuilder(args)
             #region Dependecy Injection
             services.AddSingleton<ITickerPriceIntegration, TickerPriceIntegration>();
             services.AddSingleton<ISymbolRepository, SymbolRepository>();
-            services.AddSingleton<ISymbolWatchServices, SymbolWatchServices>();
+            services.AddSingleton<ITickerPriceServices, TickerPriceServices>();
             #endregion
             
             #region Workers

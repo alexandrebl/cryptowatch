@@ -5,12 +5,12 @@ using Microsoft.VisualBasic;
 
 namespace CryptoWatch.Services;
 
-public class SymbolWatchServices : ISymbolWatchServices
+public class TickerPriceServices : ITickerPriceServices
 {
     private readonly ISymbolRepository _symbolRepository;
     private readonly ITickerPriceIntegration _tickerPriceIntegration;
 
-    public SymbolWatchServices(ISymbolRepository symbolRepository, ITickerPriceIntegration tickerPriceIntegration)
+    public TickerPriceServices(ISymbolRepository symbolRepository, ITickerPriceIntegration tickerPriceIntegration)
     {
         _symbolRepository = symbolRepository;
         _tickerPriceIntegration = tickerPriceIntegration;
