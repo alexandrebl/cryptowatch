@@ -30,7 +30,7 @@ public class ThresholdWorker : BackgroundService
                 Console.WriteLine($"{DateTime.Now:o} => Symbol: {symbolPrice.Symbol} / {symbolPrice.LastPrice}");
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            await Task.Delay(5000, stoppingToken);
+            await Task.Delay(3000, stoppingToken);
         }
     }
 }
