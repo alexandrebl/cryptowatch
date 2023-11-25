@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoWatch", "CryptoWatch\CryptoWatch.csproj", "{4E409481-4CD5-432C-BBA6-3CAE3FBD0927}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoWatch", "CryptoWatch\CryptoWatch.csproj", "{4E409481-4CD5-432C-BBA6-3CAE3FBD0927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoWatch.Tests", "CryptoWatch.Tests\CryptoWatch.Tests.csproj", "{AB8A7557-DD78-4702-8E5D-10249DC400D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +17,15 @@ Global
 		{4E409481-4CD5-432C-BBA6-3CAE3FBD0927}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E409481-4CD5-432C-BBA6-3CAE3FBD0927}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E409481-4CD5-432C-BBA6-3CAE3FBD0927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB8A7557-DD78-4702-8E5D-10249DC400D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8A7557-DD78-4702-8E5D-10249DC400D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8A7557-DD78-4702-8E5D-10249DC400D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8A7557-DD78-4702-8E5D-10249DC400D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5B570CC-9C25-44B8-B9C7-22D13A715EDF}
 	EndGlobalSection
 EndGlobal

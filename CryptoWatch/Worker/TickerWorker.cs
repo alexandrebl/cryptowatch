@@ -21,7 +21,7 @@ public class TickerWorker : BackgroundService
         {
             await _tickerPriceServices.UpdateTickerPrice();
             
-            await Task.Delay(5000, stoppingToken);
+            await Task.Delay(1000, stoppingToken);
         }
     }
 }
