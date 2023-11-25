@@ -24,8 +24,7 @@ var host = Host.CreateDefaultBuilder(args)
             services.AddKeyedSingleton("LastPrices", redisConnection.GetDatabase(0));
 
             #endregion
-
-            
+                        
             #region Entity Framework
             services.AddDbContext<CryptoWatchSpotContext>(options =>
                 options.UseSqlServer(Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCONNECTION")), ServiceLifetime.Singleton);
@@ -36,8 +35,9 @@ var host = Host.CreateDefaultBuilder(args)
             services.AddSingleton<ITickerPriceIntegration, TickerPriceIntegration>();
             services.AddSingleton<ISymbolRepository, SymbolRepository>();
             services.AddSingleton<ITickerPriceServices, TickerPriceServices>();
+            services.AddSingleton<IThresholdServices, ThresholdServices>();            
             #endregion
-            
+
             #region Workers
             services.AddHostedService<ThresholdWorker>();
             services.AddHostedService<TickerWorker>();

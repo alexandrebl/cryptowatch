@@ -1,35 +1,27 @@
 using System.Runtime.InteropServices.JavaScript;
 using Binance.Spot;
 using CryptoWatch.Integration.Binance.ApiRest.Domain;
-using Microsoft.Extensions.Caching.Distributed;
-using StackExchange.Redis;
+using CryptoWatch.Services.Interfaces;
 
 namespace CryptoWatch.Worker;
 
 public class ThresholdWorker : BackgroundService
 {
     private readonly ILogger<ThresholdWorker> _logger;
-    private readonly IDatabase _redisDatabaseLastPrices;
+    private readonly IThresholdServices _thresholdServices;
 
-    public ThresholdWorker(ILogger<ThresholdWorker> logger, [FromKeyedServices("LastPrices")] IDatabase redisDatabaseLastPrices)
+    public ThresholdWorker(ILogger<ThresholdWorker> logger, IThresholdServices thresholdServices)
     {
         _logger = logger;
-        _redisDatabaseLastPrices = redisDatabaseLastPrices;
+        _thresholdServices = thresholdServices;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            var lastPrices = _redisDatabaseLastPrices.HashGetAll("LastPrices").
-                    Select(s => new SymbolPrice() { Symbol=s.Name, LastPrice= s.Value});
+            await _thresholdServices.ExecuteAsync(stoppingToken);
 
-            foreach (var symbolPrice in lastPrices)
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"{DateTime.Now:o} => Symbol: {symbolPrice.Symbol} / {symbolPrice.LastPrice}");
-                Console.ForegroundColor = ConsoleColor.White;
-            }
             await Task.Delay(3000, stoppingToken);
         }
     }
