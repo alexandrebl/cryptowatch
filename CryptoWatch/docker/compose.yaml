@@ -15,7 +15,16 @@ services:
     container_name: cryptowatch-redis
     ports:
       - "6379:6379"
-
+  sqlserver:
+    platform: linux/amd64
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: cryptowatch-sqlserver
+    environment:
+      SA_PASSWORD: "CryptoW@tch2024"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
 networks:
   default:
     driver: bridge
