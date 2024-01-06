@@ -1448,7 +1448,7 @@
           }
         }
       },
-      "StackExchange.Redis/2.7.4": {
+      "StackExchange.Redis/2.7.10": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
@@ -1465,35 +1465,35 @@
           }
         }
       },
-      "StackExchange.Redis.Extensions.AspNetCore/9.1.0": {
+      "StackExchange.Redis.Extensions.AspNetCore/10.0.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Configuration.Binder": "7.0.3",
-          "Microsoft.Extensions.Configuration.Json": "7.0.0",
-          "Microsoft.Extensions.DependencyInjection": "7.0.0",
-          "StackExchange.Redis.Extensions.Core": "9.1.0"
+          "Microsoft.Extensions.Configuration.Binder": "8.0.0",
+          "Microsoft.Extensions.Configuration.Json": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection": "8.0.0",
+          "StackExchange.Redis.Extensions.Core": "10.0.2"
         },
         "compile": {
-          "lib/net7.0/StackExchange.Redis.Extensions.AspNetCore.dll": {}
+          "lib/net8.0/StackExchange.Redis.Extensions.AspNetCore.dll": {}
         },
         "runtime": {
-          "lib/net7.0/StackExchange.Redis.Extensions.AspNetCore.dll": {}
+          "lib/net8.0/StackExchange.Redis.Extensions.AspNetCore.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
       },
-      "StackExchange.Redis.Extensions.Core/9.1.0": {
+      "StackExchange.Redis.Extensions.Core/10.0.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
-          "StackExchange.Redis": "2.6.90"
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
+          "StackExchange.Redis": "2.7.10"
         },
         "compile": {
-          "lib/net7.0/StackExchange.Redis.Extensions.Core.dll": {}
+          "lib/net8.0/StackExchange.Redis.Extensions.Core.dll": {}
         },
         "runtime": {
-          "lib/net7.0/StackExchange.Redis.Extensions.Core.dll": {}
+          "lib/net8.0/StackExchange.Redis.Extensions.Core.dll": {}
         }
       },
       "System.CodeDom/4.4.0": {
@@ -4253,10 +4253,10 @@
         "pipelines.sockets.unofficial.nuspec"
       ]
     },
-    "StackExchange.Redis/2.7.4": {
-      "sha512": "lD6a0lGOCyV9iuvObnzStL74EDWAyK31w6lS+Md9gIz1eP4U6KChDIflzTdtrktxlvVkeOvPtkaYOcm4qjbHSw==",
+    "StackExchange.Redis/2.7.10": {
+      "sha512": "DHC438nKZUbtJ0H8O5pCTMrurYy6ByUPhzUNAPCUADtI4BSyvASpWAquYjN+4NKEiKaW5AO++tgftum3tDraPQ==",
       "type": "package",
-      "path": "stackexchange.redis/2.7.4",
+      "path": "stackexchange.redis/2.7.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4270,14 +4270,14 @@
         "lib/netcoreapp3.1/StackExchange.Redis.xml",
         "lib/netstandard2.0/StackExchange.Redis.dll",
         "lib/netstandard2.0/StackExchange.Redis.xml",
-        "stackexchange.redis.2.7.4.nupkg.sha512",
+        "stackexchange.redis.2.7.10.nupkg.sha512",
         "stackexchange.redis.nuspec"
       ]
     },
-    "StackExchange.Redis.Extensions.AspNetCore/9.1.0": {
-      "sha512": "tFCi/FQEGVRxuNAvTeNCfvVpSIMGS0Zw+LJPk49uR9k7Wn9Ay27+dMb6EwjPFWM9pRv2Eu0umhh7VkKA4zEeoA==",
+    "StackExchange.Redis.Extensions.AspNetCore/10.0.2": {
+      "sha512": "kWNbvUql7s2SCtOT1JIF+ita0NP0WBl1aLAaVNV6ZhuDtGcAC1xDYFtZ6gaoNuOHM8B7wg9ElJnw08XJO19DWg==",
       "type": "package",
-      "path": "stackexchange.redis.extensions.aspnetcore/9.1.0",
+      "path": "stackexchange.redis.extensions.aspnetcore/10.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4285,32 +4285,30 @@
         "lib/net6.0/StackExchange.Redis.Extensions.AspNetCore.dll",
         "lib/net7.0/.xml",
         "lib/net7.0/StackExchange.Redis.Extensions.AspNetCore.dll",
-        "lib/netcoreapp3.1/.xml",
-        "lib/netcoreapp3.1/StackExchange.Redis.Extensions.AspNetCore.dll",
+        "lib/net8.0/.xml",
+        "lib/net8.0/StackExchange.Redis.Extensions.AspNetCore.dll",
         "lib/netstandard2.1/.xml",
         "lib/netstandard2.1/StackExchange.Redis.Extensions.AspNetCore.dll",
-        "stackexchange.redis.extensions.aspnetcore.9.1.0.nupkg.sha512",
+        "stackexchange.redis.extensions.aspnetcore.10.0.2.nupkg.sha512",
         "stackexchange.redis.extensions.aspnetcore.nuspec"
       ]
     },
-    "StackExchange.Redis.Extensions.Core/9.1.0": {
-      "sha512": "oj9Y3YfIa9bBGMcQIEvucPpwlqrZzPquDbZZQbJif7Bt7mTBkjovJ8fMd6DRbqDFaXWSA63T1Iei+z78gvERyg==",
+    "StackExchange.Redis.Extensions.Core/10.0.2": {
+      "sha512": "zNKJC3A6lAAqkhEVxWoj5N/GEy+y7pGuFmMgncr4bEMZ/cZ/XlW07oznO8ymNrbUANGx404EkqNEp60c93b3sg==",
       "type": "package",
-      "path": "stackexchange.redis.extensions.core/9.1.0",
+      "path": "stackexchange.redis.extensions.core/10.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net472/.xml",
-        "lib/net472/StackExchange.Redis.Extensions.Core.dll",
         "lib/net6.0/.xml",
         "lib/net6.0/StackExchange.Redis.Extensions.Core.dll",
         "lib/net7.0/.xml",
         "lib/net7.0/StackExchange.Redis.Extensions.Core.dll",
-        "lib/netcoreapp2.1/.xml",
-        "lib/netcoreapp2.1/StackExchange.Redis.Extensions.Core.dll",
+        "lib/net8.0/.xml",
+        "lib/net8.0/StackExchange.Redis.Extensions.Core.dll",
         "lib/netstandard2.1/.xml",
         "lib/netstandard2.1/StackExchange.Redis.Extensions.Core.dll",
-        "stackexchange.redis.extensions.core.9.1.0.nupkg.sha512",
+        "stackexchange.redis.extensions.core.10.0.2.nupkg.sha512",
         "stackexchange.redis.extensions.core.nuspec"
       ]
     },
@@ -5499,8 +5497,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
       "Microsoft.Extensions.Hosting >= 8.0.0",
       "Microsoft.Extensions.Http >= 8.0.0",
-      "StackExchange.Redis >= 2.7.4",
-      "StackExchange.Redis.Extensions.AspNetCore >= 9.1.0"
+      "StackExchange.Redis >= 2.7.10",
+      "StackExchange.Redis.Extensions.AspNetCore >= 10.0.2"
     ]
   },
   "packageFolders": {
@@ -5594,11 +5592,11 @@
           },
           "StackExchange.Redis": {
             "target": "Package",
-            "version": "[2.7.4, )"
+            "version": "[2.7.10, )"
           },
           "StackExchange.Redis.Extensions.AspNetCore": {
             "target": "Package",
-            "version": "[9.1.0, )"
+            "version": "[10.0.2, )"
           }
         },
         "imports": [

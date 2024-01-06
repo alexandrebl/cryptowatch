@@ -26,7 +26,23 @@
         </PackageReference>
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
         <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
-        <PackageReference Include="StackExchange.Redis" Version="2.7.4" />
-        <PackageReference Include="StackExchange.Redis.Extensions.AspNetCore" Version="9.1.0" />
+        <PackageReference Include="StackExchange.Redis" Version="2.7.10" />
+        <PackageReference Include="StackExchange.Redis.Extensions.AspNetCore" Version="10.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Migrations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Migrations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Migrations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Migrations\**" />
     </ItemGroup>
 </Project>
