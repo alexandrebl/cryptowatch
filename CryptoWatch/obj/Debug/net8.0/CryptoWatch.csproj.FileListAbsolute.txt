@@ -130,7 +130,6 @@ C:/Repository/git/cryptowatch/CryptoWatch/obj/Debug/net8.0/refint/CryptoWatch.dl
 C:/Repository/git/cryptowatch/CryptoWatch/obj/Debug/net8.0/CryptoWatch.pdb
 C:/Repository/git/cryptowatch/CryptoWatch/obj/Debug/net8.0/CryptoWatch.genruntimeconfig.cache
 C:/Repository/git/cryptowatch/CryptoWatch/obj/Debug/net8.0/ref/CryptoWatch.dll
-/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net8.0/appsettings.Development.json
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net8.0/appsettings.json
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net8.0/CryptoWatch
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net8.0/CryptoWatch.deps.json
@@ -263,3 +262,4 @@ C:/Repository/git/cryptowatch/CryptoWatch/obj/Debug/net8.0/ref/CryptoWatch.dll
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/obj/Debug/net8.0/CryptoWatch.pdb
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/obj/Debug/net8.0/CryptoWatch.genruntimeconfig.cache
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/obj/Debug/net8.0/ref/CryptoWatch.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net8.0/Properties/launchSettings.json

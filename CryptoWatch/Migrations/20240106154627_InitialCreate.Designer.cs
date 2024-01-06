@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CryptoWatch.Migrations
 {
     [DbContext(typeof(CryptoWatchSpotContext))]
-    [Migration("20240106154403_InitialCreate")]
+    [Migration("20240106154627_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

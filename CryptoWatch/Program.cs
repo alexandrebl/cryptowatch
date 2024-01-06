@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using CryptoWatch.Worker;
 using CryptoWatch.Integration.Binance.ApiRest;
 using CryptoWatch.Integration.Binance.ApiRest.Interfaces;
@@ -8,6 +9,7 @@ using CryptoWatch.Services;
 using CryptoWatch.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
+using Microsoft.Extensions.Configuration;
 
 var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(
@@ -16,8 +18,11 @@ var host = Host.CreateDefaultBuilder(args)
             #region Middlewares
             services.AddHttpClient();
 
-            var redisConnection = ConnectionMultiplexer.Connect( 
-                Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCACHECONNECTION"));
+            var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
+            var redisConnectionString = configuration.GetSection("ConnectionStrings")["Redis"];
+
+            var redisConnection = ConnectionMultiplexer.Connect(redisConnectionString);
             
             services.AddSingleton<IConnectionMultiplexer>(redisConnection);
             // todo O indice do banco deveria vir por configuração
@@ -26,11 +31,12 @@ var host = Host.CreateDefaultBuilder(args)
             #endregion
                         
             #region Entity Framework
+            
+            var connectionString =  configuration.GetSection("ConnectionStrings")["SqlServer"];
             services.AddDbContext<CryptoWatchSpotContext>(
                 options =>
                 {
-                    options.UseSqlServer(Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCONNECTION"), 
-                        m => m.MigrationsAssembly("CryptoWatch"));
+                    options.UseSqlServer(connectionString);
                 }, ServiceLifetime.Singleton);
 
             #endregion

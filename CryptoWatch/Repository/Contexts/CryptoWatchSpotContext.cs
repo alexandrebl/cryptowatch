@@ -23,17 +23,13 @@ public class CryptoWatchSpotContext : DbContext
     {
         public CryptoWatchSpotContext CreateDbContext(string[] args)
         {
-            //var connectionString = Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCONNECTION");
-            var connectionString =  "Server=localhost,1433;Initial Catalog=CryptoWatchSpot;Persist Security Info=False;User ID=sa;Password=CryptoW@tch2024;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;";
+            var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
+            var sqlServerConnectionString = configuration.GetSection("ConnectionStrings")["SqlServer"];
             
             var optionsBuilder = new DbContextOptionsBuilder<CryptoWatchSpotContext>();
             
-            Console.WriteLine("1---------");
-            Console.WriteLine(connectionString);
-            Console.Write("2---------");
-    
-           
-            optionsBuilder.UseSqlServer(connectionString, m => m.MigrationsAssembly("CryptoWatch"));
+            optionsBuilder.UseSqlServer(sqlServerConnectionString);
     
             return new CryptoWatchSpotContext(optionsBuilder.Options);
         }
