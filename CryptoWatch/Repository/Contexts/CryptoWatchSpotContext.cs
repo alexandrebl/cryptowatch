@@ -33,7 +33,7 @@ public class CryptoWatchSpotContext : DbContext
             Console.Write("2---------");
     
            
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer(connectionString, m => m.MigrationsAssembly("CryptoWatch"));
     
             return new CryptoWatchSpotContext(optionsBuilder.Options);
         }

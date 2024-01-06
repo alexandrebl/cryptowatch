@@ -26,8 +26,12 @@ var host = Host.CreateDefaultBuilder(args)
             #endregion
                         
             #region Entity Framework
-            services.AddDbContext<CryptoWatchSpotContext>(options =>
-                options.UseSqlServer(Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCONNECTION")), ServiceLifetime.Singleton);
+            services.AddDbContext<CryptoWatchSpotContext>(
+                options =>
+                {
+                    options.UseSqlServer(Environment.GetEnvironmentVariable("CRYPTOWATCHSPOTCONNECTION"), 
+                        m => m.MigrationsAssembly("CryptoWatch"));
+                }, ServiceLifetime.Singleton);
 
             #endregion
 

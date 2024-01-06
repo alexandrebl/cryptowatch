@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoWatch.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4397e005e6043ecf2b4756f63d032618cb8ac36b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33d0708a08fc03fb5d8a978c20129b40d4727c21")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoWatch.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoWatch.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
