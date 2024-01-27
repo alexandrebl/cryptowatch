@@ -9,7 +9,6 @@ public class CryptoWatchSpotContext : DbContext
     
     public CryptoWatchSpotContext(DbContextOptions<CryptoWatchSpotContext> options) : base(options)
     {
-        //Database.EnsureCreated(); 
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -13,11 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoWatch.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< Updated upstream
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ade1e4355adefb86b73cdd3ea6109f15eb8db28a")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+314d41b5c62d31c225a226eec4702605362fc493")]
->>>>>>> Stashed changes
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoWatch.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoWatch.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
