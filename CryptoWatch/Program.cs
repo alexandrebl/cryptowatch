@@ -49,6 +49,10 @@ var host = Host.CreateDefaultBuilder(args)
             services.AddSingleton<ITickerPriceServices, TickerPriceServices>();
             services.AddSingleton<IThresholdServices, ThresholdServices>();            
             #endregion
+            
+            #region Extensions
+            services.RegisterEasyNetQ("host=localhost");
+            #endregion
 
             #region Workers
             services.AddHostedService<ThresholdWorker>();

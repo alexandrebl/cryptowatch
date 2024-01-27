@@ -197,3 +197,8 @@ C:/Repository/git/cryptowatch/CryptoWatch.Tests/obj/Debug/net8.0/ref/CryptoWatch
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/obj/Debug/net8.0/CryptoWatch.Tests.genruntimeconfig.cache
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/obj/Debug/net8.0/ref/CryptoWatch.Tests.dll
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/xunit.runner.visualstudio.testadapter.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/EasyNetQ.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/EasyNetQ.DI.Microsoft.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/RabbitMQ.Client.dll

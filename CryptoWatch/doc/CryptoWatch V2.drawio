@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-27T14:49:11.615Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="Cj6ErNRXGTA4fsA4cttZ" version="23.0.2" type="device">
+<mxfile host="app.diagrams.net" modified="2024-01-27T14:51:09.095Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="qs_TPW9yrggfKx9OBp8Y" version="23.0.2" type="device">
   <diagram name="Página-1" id="orKtkqgNnEhuvpbU4lRC">
     <mxGraphModel dx="896" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -127,19 +127,19 @@
         <mxCell id="G_dlDyoEbi96RCxGxSzA-8" value="Queue&lt;br&gt;logs" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
           <mxGeometry x="40" y="420" width="40" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="G_dlDyoEbi96RCxGxSzA-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="G_dlDyoEbi96RCxGxSzA-8" target="G_dlDyoEbi96RCxGxSzA-7">
+        <mxCell id="G_dlDyoEbi96RCxGxSzA-12" value="Queue&lt;br&gt;Notifications" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="170" y="420" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G_dlDyoEbi96RCxGxSzA-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="G_dlDyoEbi96RCxGxSzA-12" target="g9TUhTmFaGRDurfYE0z2-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G_dlDyoEbi96RCxGxSzA-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="G_dlDyoEbi96RCxGxSzA-8" target="G_dlDyoEbi96RCxGxSzA-7">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="90" y="450" />
               <mxPoint x="90" y="540" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="G_dlDyoEbi96RCxGxSzA-12" value="Queue&lt;br&gt;Notifications" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="170" y="420" width="40" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="G_dlDyoEbi96RCxGxSzA-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="G_dlDyoEbi96RCxGxSzA-12" target="g9TUhTmFaGRDurfYE0z2-21">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

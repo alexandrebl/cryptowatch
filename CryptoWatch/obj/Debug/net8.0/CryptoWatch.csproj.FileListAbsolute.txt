@@ -263,3 +263,6 @@ C:/Repository/git/cryptowatch/CryptoWatch/obj/Debug/net8.0/ref/CryptoWatch.dll
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/obj/Debug/net8.0/CryptoWatch.genruntimeconfig.cache
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/obj/Debug/net8.0/ref/CryptoWatch.dll
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net8.0/Properties/launchSettings.json
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net8.0/EasyNetQ.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net8.0/EasyNetQ.DI.Microsoft.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch/bin/Debug/net8.0/RabbitMQ.Client.dll
