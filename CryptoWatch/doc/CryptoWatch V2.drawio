@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-27T14:51:09.095Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="qs_TPW9yrggfKx9OBp8Y" version="23.0.2" type="device">
+<mxfile host="app.diagrams.net" modified="2024-01-27T15:43:49.660Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="r6jN-iZtDZNMrocOY1II" version="23.0.2" type="device">
   <diagram name="Página-1" id="orKtkqgNnEhuvpbU4lRC">
     <mxGraphModel dx="896" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -9,7 +9,7 @@
         </mxCell>
         <mxCell id="g9TUhTmFaGRDurfYE0z2-7" value="Define Symbol -&amp;gt; BTCUSDT" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="g9TUhTmFaGRDurfYE0z2-6" vertex="1" connectable="0">
           <mxGeometry x="0.1063" y="-3" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-4" y="7" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="6Vy0_xkDUqe9r4v5dvLa-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
@@ -95,7 +95,7 @@
             <mxPoint y="-12" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="g9TUhTmFaGRDurfYE0z2-21" value="Estatistica" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" parent="1" vertex="1">
+        <mxCell id="g9TUhTmFaGRDurfYE0z2-21" value="Estatistica&lt;br&gt;Scylla" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" parent="1" vertex="1">
           <mxGeometry x="300" y="450" width="60" height="80" as="geometry" />
         </mxCell>
         <mxCell id="g9TUhTmFaGRDurfYE0z2-24" value="Views&lt;br&gt;Up &amp;amp; Down&lt;br&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" parent="1" vertex="1">

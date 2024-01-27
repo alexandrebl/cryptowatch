@@ -25,6 +25,13 @@ services:
       MSSQL_PID: "Developer"
     ports:
       - "1433:1433"
+  mongo:
+    image: mongo
+    container_name: cryptowatch-mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: guest
+      MONGO_INITDB_ROOT_PASSWORD: guest
 networks:
   default:
     driver: bridge
