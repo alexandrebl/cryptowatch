@@ -25,9 +25,11 @@ var host = Host.CreateDefaultBuilder(args)
             var redisConnection = ConnectionMultiplexer.Connect(redisConnectionString);
             
             services.AddSingleton<IConnectionMultiplexer>(redisConnection);
+            
             // todo O indice do banco deveria vir por configuração
             services.AddKeyedSingleton("LastPrices", redisConnection.GetDatabase(0));
-
+            services.AddKeyedSingleton("Publisher", redisConnection.GetSubscriber());
+            
             #endregion
                         
             #region Entity Framework
