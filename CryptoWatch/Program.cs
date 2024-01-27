@@ -58,6 +58,8 @@ var host = Host.CreateDefaultBuilder(args)
             services.AddHostedService<ThresholdWorker>();
             services.AddHostedService<TickerWorker>();
             services.AddHostedService<ThresholdSymbolNotificationWorker>();
+            services.AddHostedService<ThresholdLogWorker>();
+            services.AddHostedService<ThresholdSymbolMessageWorker>();
             #endregion
         })
     .Build();
