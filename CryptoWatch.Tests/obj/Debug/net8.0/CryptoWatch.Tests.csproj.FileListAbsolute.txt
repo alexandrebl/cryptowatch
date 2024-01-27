@@ -98,7 +98,6 @@ C:/Repository/git/cryptowatch/CryptoWatch.Tests/obj/Debug/net8.0/refint/CryptoWa
 C:/Repository/git/cryptowatch/CryptoWatch.Tests/obj/Debug/net8.0/CryptoWatch.Tests.pdb
 C:/Repository/git/cryptowatch/CryptoWatch.Tests/obj/Debug/net8.0/CryptoWatch.Tests.genruntimeconfig.cache
 C:/Repository/git/cryptowatch/CryptoWatch.Tests/obj/Debug/net8.0/ref/CryptoWatch.Tests.dll
-/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/xunit.runner.reporters.netcoreapp10.dll
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/xunit.runner.utility.netcoreapp10.dll
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/CryptoWatch.Tests.deps.json
@@ -197,3 +196,4 @@ C:/Repository/git/cryptowatch/CryptoWatch.Tests/obj/Debug/net8.0/ref/CryptoWatch
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/obj/Debug/net8.0/CryptoWatch.Tests.pdb
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/obj/Debug/net8.0/CryptoWatch.Tests.genruntimeconfig.cache
 /Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/obj/Debug/net8.0/ref/CryptoWatch.Tests.dll
+/Users/abrandaol/RiderProjects/CryptoWatch/CryptoWatch.Tests/bin/Debug/net8.0/xunit.runner.visualstudio.testadapter.dll

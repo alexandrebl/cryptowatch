@@ -29,6 +29,7 @@ public class TickerPriceServices : ITickerPriceServices
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("There is no symbol to watch");
             Console.ForegroundColor = ConsoleColor.White;
+            return;
         }
 
         var symbols = symbolWatchItems.Select(s => s.Symbol);

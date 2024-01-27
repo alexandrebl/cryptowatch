@@ -18,9 +18,7 @@ namespace CryptoWatch.Services
             _redisDatabaseLastPrices = redisDatabaseLastPrices;
             _currentPrices = new List<SymbolPrice>();
         }
-
-        // todo Last -> 0.1% -> Current com o ultimo valor
-
+        
         public async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var lastPrices = _redisDatabaseLastPrices.HashGetAll("LastPrices").
@@ -30,30 +28,13 @@ namespace CryptoWatch.Services
             { 
                 await GetUpDown(lastPrice);
             }
-
-            // todo Limpar variavel current price para moedas nao listadas em LastPrice
-
+            
             await Task.CompletedTask;
         }
 
-
-        // 100,00 - Current
-        // 120,00 - LastPrice
-        // 20,00 - Variacao
-        // 20% - Taxa de variacao
-        // UP - Verde 
-
-        // 1% - Threshold
-
-        // 100,00
-        // 80,00
-        // 20,00
-        // 20%
-        // DW - Vermelho
-
         public async Task GetUpDown(SymbolPrice lastPrice)
         {
-            var threshold = 0.0001M;
+            var threshold = 0.01M;
             var currentPrice = _currentPrices.FirstOrDefault(f => f.Symbol == lastPrice.Symbol);
 
             if (currentPrice is null)
@@ -78,7 +59,7 @@ namespace CryptoWatch.Services
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine($"Symbol: {lastPrice.Symbol} / Current Price: {currentP} / Last Price: {lastP} / Threshold: {threshold:N4}% / Variação: {taxaVariacao:N4}%");
                 Console.ForegroundColor = ConsoleColor.White;
             }
