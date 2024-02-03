@@ -16,6 +16,6 @@ public class SymbolPriceUpOrDownResult
 
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
     public decimal Threshold { get; set; }
-    public decimal TaxaVariacao { get; set; }
+    public decimal RateVariation { get; set; }
 }
 

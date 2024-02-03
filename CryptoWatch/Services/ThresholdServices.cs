@@ -39,7 +39,7 @@ namespace CryptoWatch.Services
 
         public async Task GetUpDown(SymbolPrice lastPrice)
         {
-            var threshold = 0.0001M;
+            var threshold = 0.0001M; // TOdo varial de ambiente
             var currentPrice = _currentPrices.FirstOrDefault(f => f.Symbol == lastPrice.Symbol);
 
             if (currentPrice is null)
@@ -51,15 +51,15 @@ namespace CryptoWatch.Services
             var lastP = decimal.Parse(lastPrice.LastPrice);
             var currentP = decimal.Parse(currentPrice.LastPrice);
 
-            var taxaVariacao = (currentP / lastP - 1) * 100;
+            var rateVariation = (currentP / lastP - 1) * 100;
 
-            var notified = (Math.Abs(taxaVariacao) >= threshold);
-            var isUpOrDown = (taxaVariacao >= 0) ? IsUpOrDown.Up : IsUpOrDown.Down;
+            var notified = (Math.Abs(rateVariation) >= threshold);
+            var isUpOrDown = (rateVariation >= 0) ? IsUpOrDown.Up : IsUpOrDown.Down;
 
             if (notified)
             {
                 Console.ForegroundColor = (isUpOrDown == IsUpOrDown.Up) ? ConsoleColor.Green : ConsoleColor.Red;
-                Console.WriteLine($"Symbol: {lastPrice.Symbol} / Current Price: {currentP} / Last Price: {lastP} / Threshold: {threshold:N4}% / Variação: {taxaVariacao:N4}%");
+                Console.WriteLine($"Symbol: {lastPrice.Symbol} / Current Price: {currentP} / Last Price: {lastP} / Threshold: {threshold:N4}% / Variação: {rateVariation:N4}%");
                 Console.ForegroundColor = ConsoleColor.White;
 
                 await SendNotification(new SymbolPriceUpOrDownResult()
@@ -67,13 +67,13 @@ namespace CryptoWatch.Services
                     LastPrice = lastPrice, 
                     IsUpOrDown = isUpOrDown,
                     Threshold = threshold,
-                    TaxaVariacao = taxaVariacao
+                    RateVariation = rateVariation
                 });
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
-                Console.WriteLine($"Symbol: {lastPrice.Symbol} / Current Price: {currentP} / Last Price: {lastP} / Threshold: {threshold:N4}% / Variação: {taxaVariacao:N4}%");
+                Console.WriteLine($"Symbol: {lastPrice.Symbol} / Current Price: {currentP} / Last Price: {lastP} / Threshold: {threshold:N4}% / Variação: {rateVariation:N4}%");
                 Console.ForegroundColor = ConsoleColor.White;
             }
 
