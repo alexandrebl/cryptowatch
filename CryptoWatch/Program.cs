@@ -46,6 +46,7 @@ var host = Host.CreateDefaultBuilder(args)
             #region Dependecy Injection
             services.AddSingleton<ITickerPriceIntegration, TickerPriceIntegration>();
             services.AddSingleton<ISymbolRepository, SymbolRepository>();
+            services.AddSingleton<IThresholdLogRepository, ThresholdLogRepository>();
             services.AddSingleton<ITickerPriceServices, TickerPriceServices>();
             services.AddSingleton<IThresholdServices, ThresholdServices>();            
             #endregion
