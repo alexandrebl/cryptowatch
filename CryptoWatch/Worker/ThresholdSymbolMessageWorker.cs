@@ -16,13 +16,13 @@ public class ThresholdSymbolMessageWorker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        await _bus.PubSub.SubscribeAsync<SymbolPrice>("Message", HandleSymbolPrice);
+        await _bus.PubSub.SubscribeAsync<SymbolPriceUpOrDownResult>("Message", HandleSymbolPrice);
     }
     
-    static void HandleSymbolPrice(SymbolPrice symbolPrice) 
+    static void HandleSymbolPrice(SymbolPriceUpOrDownResult symbolPriceUpOrDownResult) 
     {
         Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.WriteLine("Got message from bus to message: {0}", symbolPrice.Symbol);
+        Console.WriteLine("Got message from bus to message: {0}", symbolPriceUpOrDownResult.LastPrice.Symbol);
         Console.ResetColor();
     }
 }

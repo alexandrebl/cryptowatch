@@ -22,24 +22,24 @@ public class ThresholdSymbolNotificationWorker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        await _subscriber.SubscribeAsync("SymbolPrice",  (channel, message) =>
+        await _subscriber.SubscribeAsync(nameof(SymbolPriceUpOrDownResult),  (channel, message) =>
         {
-           var lastPrice = JsonSerializer.Deserialize<SymbolPrice>(message);
+           var symbolPriceUpOrDownResult = JsonSerializer.Deserialize<SymbolPriceUpOrDownResult>(message);
             
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"Received lastprice from observer: {channel} {lastPrice.Symbol}", channel, lastPrice);
+            Console.WriteLine($"Received lastprice from observer: {channel} {symbolPriceUpOrDownResult.LastPrice.Symbol}");
             Console.ForegroundColor = ConsoleColor.White;
 
-            PublishOnBus(lastPrice);
+            PublishOnBus(symbolPriceUpOrDownResult);
         });
     }
 
-    private void PublishOnBus(SymbolPrice lastPrice)
+    private void PublishOnBus(SymbolPriceUpOrDownResult symbolPriceUpOrDownResult)
     { 
-        _bus.PubSub.Publish(lastPrice);
+        _bus.PubSub.Publish(symbolPriceUpOrDownResult);
         
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine($"Lastprice published on bus:  {lastPrice.Symbol}");
+        Console.WriteLine($"Lastprice published on bus:  {symbolPriceUpOrDownResult.LastPrice.Symbol}");
         Console.ForegroundColor = ConsoleColor.White;
     }
 }

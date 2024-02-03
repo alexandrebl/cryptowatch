@@ -6,7 +6,7 @@ namespace CryptoWatch.Repository;
 
 public class ThresholdLogRepository : IThresholdLogRepository
 {
-    public void Register(SymbolPrice symbolPrice)
+    public void Register(SymbolPriceUpOrDownResult symbolPriceUpOrDownResult)
     {
         try
         {
@@ -17,24 +17,18 @@ public class ThresholdLogRepository : IThresholdLogRepository
             var thresholdLogDb = client.GetDatabase("ThresholdLogDb");
 
             // SymbolPrice
-            var symbolPriceCollection = thresholdLogDb.GetCollection<SymbolPrice>("SymbolPrice");
+            var symbolPriceCollection = thresholdLogDb.GetCollection<SymbolPrice>("LastPrice");
 
-            symbolPriceCollection.InsertOne(symbolPrice);
+            symbolPriceCollection.InsertOne(symbolPriceUpOrDownResult.LastPrice);
             
-            //Buy or Sell
-            var buyOrSellSymbolCollection = thresholdLogDb.GetCollection<Object>("BuyOrSellSymbol");
+            //Up or Down Last Price
+            var symbolPriceUpOrDownResultCollection = thresholdLogDb.GetCollection<SymbolPriceUpOrDownResult>(nameof(SymbolPriceUpOrDownResult));
 
-            buyOrSellSymbolCollection.InsertOne(new
-            {
-                symbolPrice.Symbol,
-                symbolPrice.LastPrice,
-                CreatedDate = DateTime.UtcNow,
-                BuyOrSell = "buy"
-            });
-
+            symbolPriceUpOrDownResultCollection.InsertOne(symbolPriceUpOrDownResult);
+    
             // Print message log
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine("Register Message -> MongoDB: {0}", symbolPrice.Symbol);
+            Console.WriteLine("Register Message -> MongoDB: {0}", symbolPriceUpOrDownResult.LastPrice.Symbol);
             Console.ResetColor();
         }
         catch (Exception ex)

@@ -3,6 +3,7 @@ using CryptoWatch.Services.Interfaces;
 using CryptoWatch.Worker;
 using StackExchange.Redis;
 using System.Collections.Generic;
+using CryptoWatch.Integration.Binance.ApiRest.Domain.Enums;
 
 namespace CryptoWatch.Services
 {
@@ -53,15 +54,21 @@ namespace CryptoWatch.Services
             var taxaVariacao = (currentP / lastP - 1) * 100;
 
             var notified = (Math.Abs(taxaVariacao) >= threshold);
-            var isUpOrDownResult = taxaVariacao >= 0;
+            var isUpOrDown = (taxaVariacao >= 0) ? IsUpOrDown.Up : IsUpOrDown.Down;
 
             if (notified)
             {
-                Console.ForegroundColor = (isUpOrDownResult) ? ConsoleColor.Green : ConsoleColor.Red;
+                Console.ForegroundColor = (isUpOrDown == IsUpOrDown.Up) ? ConsoleColor.Green : ConsoleColor.Red;
                 Console.WriteLine($"Symbol: {lastPrice.Symbol} / Current Price: {currentP} / Last Price: {lastP} / Threshold: {threshold:N4}% / Variação: {taxaVariacao:N4}%");
                 Console.ForegroundColor = ConsoleColor.White;
 
-                await SendNotification(lastPrice);
+                await SendNotification(new SymbolPriceUpOrDownResult()
+                {
+                    LastPrice = lastPrice, 
+                    IsUpOrDown = isUpOrDown,
+                    Threshold = threshold,
+                    TaxaVariacao = taxaVariacao
+                });
             }
             else
             {
@@ -73,13 +80,13 @@ namespace CryptoWatch.Services
             currentPrice.LastPrice = lastPrice.LastPrice;
         }
 
-        private async Task SendNotification(SymbolPrice lastPrice)
+        private async Task SendNotification(SymbolPriceUpOrDownResult symbolPriceUpOrDownResult)
         {
-            var message = System.Text.Json.JsonSerializer.Serialize(lastPrice);
+            var message = System.Text.Json.JsonSerializer.Serialize(symbolPriceUpOrDownResult);
             
-            await _publisher.PublishAsync("SymbolPrice", message);
+            await _publisher.PublishAsync("SymbolPriceUpOrDownResult", message);
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine($"##########Symbol published on observer: {lastPrice.Symbol}");
+            Console.WriteLine($"##########Symbol published on observer: {symbolPriceUpOrDownResult.LastPrice.Symbol}");
         }
     }
 }

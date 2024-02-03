@@ -19,15 +19,15 @@ public class ThresholdLogWorker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        await _bus.PubSub.SubscribeAsync<SymbolPrice>("Log", HandleSymbolPrice);
+        await _bus.PubSub.SubscribeAsync<SymbolPriceUpOrDownResult>("Log", HandleSymbolPrice);
     }
 
-    private void HandleSymbolPrice(SymbolPrice symbolPrice) 
+    private void HandleSymbolPrice(SymbolPriceUpOrDownResult symbolPriceUpOrDownResult) 
     {
-        _thresholdLogRepository.Register(symbolPrice);
+        _thresholdLogRepository.Register(symbolPriceUpOrDownResult);
         
         Console.ForegroundColor = ConsoleColor.DarkMagenta;
-        Console.WriteLine("Got message from bus to log: {0}", symbolPrice.Symbol);
+        Console.WriteLine("Got message from bus to log: {0}", symbolPriceUpOrDownResult.LastPrice.Symbol);
         Console.ResetColor();
     }
 }
