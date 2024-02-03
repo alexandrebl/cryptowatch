@@ -32,6 +32,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: guest
       MONGO_INITDB_ROOT_PASSWORD: guest
+    ports:
+      - "27017:27017"
 networks:
   default:
     driver: bridge
