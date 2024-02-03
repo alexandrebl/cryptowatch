@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoWatch")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98cf179146b1f791a6a264f531ec75f13ffc2718")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4bf70cfd9e394408a04b507e1c386bb044f9879")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoWatch")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoWatch")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
